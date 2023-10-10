@@ -12,6 +12,9 @@ function selectTypeProduct() {
     case 'granos':
       addgranos();
       break;
+    case 'carnes':
+      addCarnes();
+    break;
   }
 }
 
@@ -46,6 +49,19 @@ function addVegetables() {
 function addgranos(){
   cleanOptions();
   const granos = ['frijoles','trigo','cafe','arroz'];
+  const selectProductElement = document.getElementById('product');
+  granos.forEach(function(frt) {
+    const fruitEelement = document.createElement('option');
+    fruitEelement.value = frt;
+    fruitEelement.className = 'product-item';
+    fruitEelement.text = frt.toUpperCase();
+    selectProductElement.appendChild(fruitEelement);
+  });
+}
+
+function addCarnes(){
+  cleanOptions();
+  const granos = ['costilla','viuda','lomo','culotte'];
   const selectProductElement = document.getElementById('product');
   granos.forEach(function(frt) {
     const fruitEelement = document.createElement('option');
